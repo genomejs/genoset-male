@@ -1,0 +1,30 @@
+[
+  {
+    "id": "rs2032651",
+    "chromosome": "Y",
+    "position": 21907538,
+    "genotype": "D"
+  },
+
+  {
+    "id": "rs9341296",
+    "chromosome": "Y",
+    "position": 15022707,
+    "genotype": "C"
+  },
+
+  {
+    "id": "rs13304168",
+    "chromosome": "Y",
+    "position": 14641193,
+    "genotype": "T"
+  },
+
+  {
+    "id": "rs16980426",
+    "chromosome": "Y",
+    "position": 22214221,
+    "genotype": "T"
+  }
+
+]
