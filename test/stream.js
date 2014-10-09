@@ -17,6 +17,7 @@ describe('male', function() {
       es.readArray(isMale).pipe(stream);
       stream.on('end', function(){
         query.matches().length.should.equal(4);
+        query.percentage().should.equal(200);
         done();
       });
     });

@@ -19,7 +19,7 @@ genoStream.on('data', function(snp){
 });
 
 genoStream.on('end', function(){
-  console.log(query.matches());
+  console.log(JSON.stringify(query.matches(), null, 4));
   console.log("There are", query.matches().length, "matches for genoset 144");
   console.log("There is a", query.percentage(), "percent chance that genoset matches");
 });
