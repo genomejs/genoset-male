@@ -5,7 +5,7 @@
 ## Information
 
 <table>
-<tr> 
+<tr>
 <td>Package</td><td>genoset-male</td>
 </tr>
 <tr>
@@ -20,40 +20,15 @@
 
 ## Compatibility
 
-This genoset is to be used with genomejs JSON. See the [dna2json](https://github.com/genomejs/dna2json) repository for more information.
+This genoset is to be used with DNA-JSON. See the [dna2json](https://github.com/genomejs/dna2json) repository for more information.
 
 ## Usage
 
-This module simply exports a GQL query. Check out the [GQL page for more information](https://github.com/genomejs/gql)
-
-
-This sample is just using the GQL streaming interface to figure out if a genome is a male or not.
-
 ```javascript
-var male = require('genoset-male');
-var fs = require('fs');
-var path = require('path');
-var es = require('event-stream');
-var JSONStream = require('JSONStream');
+var isMale = require('genoset-male');
+var dna = require('./my-dna.json');
 
-var jsonStream = fs.createReadStream(path.join(__dirname, "dna.json"));
-
-var query = male();
-var genoStream = query.stream();
-
-jsonStream
-  .pipe(JSONStream.parse('*'))
-  .pipe(genoStream);
-
-var count = 0;
-genoStream.on('data', function(snp){
-  console.log('Analyzed', ++count, 'SNPs');
-});
-
-genoStream.on('end', function(){
-  console.log("There are", query.matches().length, "matches for genoset 144");
-  console.log("There is a", query.percentage(), "percent chance that genoset matches");
-});
+console.log(isMale(dna)); // true or false
 ```
 
 ## LICENSE
