@@ -25,8 +25,8 @@ This genoset is to be used with DNA-JSON. See the [dna2json](https://github.com/
 ## Usage
 
 ```javascript
-var isMale = require('genoset-male');
-var dna = require('./my-dna.json');
+const isMale = require('genoset-male');
+const dna = require('./my-dna.json');
 
 console.log(isMale(dna)); // true or false
 ```
